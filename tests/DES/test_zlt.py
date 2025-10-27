@@ -34,10 +34,11 @@ sim_zlt = des.ZLT(
     [instance["initial_stock_warehouse"]] + instance["initial_stock_store"],
     instance["dfw_chance"],
     "OUT",  # Order up to policy (i.e. base-stock)
+    log=True,
 )
 order_quantities = [[100, 11, 11, 11, 11, 11] for t in range(instance["T"])]
-print(order_quantities[35][4])
+
 sim_zlt.set_order_q(order_quantities)
 sim_zlt.run(demand)
-print(sim_zlt.period_cost)
+print(sim_zlt.log)
 sim_zlt.reset()

@@ -4,7 +4,6 @@ import pandas as pd
 """
     Contains discrete event systems for:
     * ZLT (Zero Lead Time) model
-    * PLT (positive lead time) model with logging for positive lead time
     * PLT_speedy (Positive Lead Time) model without logging
 """
 

@@ -57,8 +57,13 @@ online_demand_allocation = [
 sim_plt.set_order_q(
     [132 for s in range(instance["T"])],
     [[12 for s in range(instance["T"])] for k in range(instance["n"])],
-    [[2 for s in range(instance["T"])] for k in range(instance["n"])],
+    [[8 for s in range(instance["T"])] for k in range(instance["n"])],
 )
 sim_plt.run(demand, online_demand_allocation)
+print(
+    "Base Stock: wh: {}, store: {}, order cap: {}".format(
+        sim_plt.ech_out[0], sim_plt.st_out[0][0], sim_plt.r[0][0]
+    )
+)
 print(sim_plt.period_cost)
 sim_plt.reset()
