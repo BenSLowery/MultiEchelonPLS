@@ -51,7 +51,9 @@ class PLT_speedy:
         # Populate the initial inventory evenely across the inventory pipeline (excluding the L position which is for orders)
         if self.l_w > 0:
             for lead_time in range(self.l_w):
-                self.x_warehouse[0][lead_time] = int(self.init_warehouse / (self.l_w + 1))
+                self.x_warehouse[0][lead_time] = int(
+                    self.init_warehouse / (self.l_w + 1)
+                )
         else:
             self.x_warehouse[0][0] = self.init_warehouse
 
@@ -149,7 +151,9 @@ class PLT_speedy:
         self.x_store = np.zeros((self.N, self.T + 1, self.l_s + 1))
         if self.l_w > 0:
             for lead_time in range(self.l_w):
-                self.x_warehouse[0][lead_time] = int(self.init_warehouse / (self.l_w + 1))
+                self.x_warehouse[0][lead_time] = int(
+                    self.init_warehouse / (self.l_w + 1)
+                )
         else:
             self.x_warehouse[0][0] = self.init_warehouse
 
