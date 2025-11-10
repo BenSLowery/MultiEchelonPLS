@@ -1,0 +1,1 @@
+Code for Omnichannel Retailing under partial lost-sales. Please see tests/DES for examples of how to run the discrete event system. See SimStudy/sim_study_template_plt.py for running the positive lead time study in the paper. Finally, we should have the zero lead time template up soon.
