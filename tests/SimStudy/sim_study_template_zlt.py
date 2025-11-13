@@ -66,11 +66,11 @@ def adbs_evaluation(wh_range, store_range, params, change='overage'):
                         
                     elif c_o >= mode_overage:
                         st_out_one_time_period.append(np.ceil(st+st*(CF-CF_mode)))
-            st_out = [st_out_one_time_period for t in range(T)]
+            st_out = [st_out_one_time_period for t in range(params['periods'])]
 
-            wh_online_demand = [sp.poisson(params['demand_params'][t][0]).ppf(params['cu'][0]/(params['cu'][0]+params['cu'][0])) for t in range(T)]
+            wh_online_demand = [sp.poisson(params['demand_params'][t][0]).ppf(params['cu'][0]/(params['cu'][0]+params['cu'][0])) for t in range(params['periods'])]
 
-            order_up_to = [[wh+wh_online_demand[t] + np.sum(st_out[t])] + st_out[t] for t in range(T)]
+            order_up_to = [[wh+wh_online_demand[t] + np.sum(st_out[t])] + st_out[t] for t in range(params['periods'])]
                 
             sim_zlt.set_order_q(order_up_to)
 
